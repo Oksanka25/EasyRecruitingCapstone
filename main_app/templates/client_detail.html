@@ -10,10 +10,19 @@
         <p class="detail__p"> <strong>Position:</strong>  {{client.position}}</p>
         <p class="detail__p"> <strong>Email:</strong> {{client.email}}</p>
         <p class="detail__p"> <strong>Phone#:</strong> {{client.phone}}</p>
-        <a href="{{client.resume}}"> Resume Link</a>
-        <a href="{{client.linkedin}}"> LinkedIn Link</a>
+        <p> <a href="{{client.resume}}"> Resume</a> </p>
+        <p> <a href="{{client.linkedin}}"> LinkedIn</a> </p>
         <p class="detail__p"> <strong>Notes:</strong> {{client.notes}}</p>
         
+    </div>
+
+    <div class="">
+        <a href="{% url 'client_update' client.pk %}" >
+            <button class="btn btn-outline-success mr-3"> Update</button>
+        </a>
+        {% comment %} <a href="{% url 'client_delete' client.pk %}" >
+                <button class="btn btn-outline-danger"> Delete</button>
+        </a> {% endcomment %}
     </div>
 </div>
 

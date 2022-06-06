@@ -1,8 +1,9 @@
 from django.shortcuts import render
 from django.views import View
 from django.views.generic.base import TemplateView
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView
 from django.views.generic import DetailView
+from django.urls import reverse
 # import models
 from .models import Client
 
@@ -42,3 +43,13 @@ class ClientCreate(CreateView):
 class ClientDetail(DetailView):
     model = Client
     template_name = "client_detail.html"
+
+
+class ClientUpdate(UpdateView):
+    model = Client
+    fields = ['status', 'name', 'position', 'image', 'email',
+              'phone', 'resume', 'linkedin', 'notes']
+    template_name = "client_update.html"
+
+    def get_success_url(self):
+        return reverse('client_detail', kwargs={'pk': self.object.pk})
