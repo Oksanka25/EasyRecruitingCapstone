@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views import View
 from django.views.generic.base import TemplateView
-from django.views.generic.edit import CreateView, UpdateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import DetailView
 from django.urls import reverse
 # import models
@@ -53,3 +53,9 @@ class ClientUpdate(UpdateView):
 
     def get_success_url(self):
         return reverse('client_detail', kwargs={'pk': self.object.pk})
+
+
+class ClientDelete(DeleteView):
+    model = Client
+    template_name = "client_delete.html"
+    success_url = "/clients/"
