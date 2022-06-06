@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %} Clients {% endblock %}
+{% block content %}
+    <h1 class="">{{header}}</h1>
+    <form class="mb-5" method="get">
+        <div class="">
+          <div class="">
+            <input class="input" type="text" name="name" placeholder="name" />
+          </div>
+          <div class="">
+            <input class="button ml-1" type="submit" value="Search" />
+          </div>
+        </div>
+        <a class="button" href="{% url 'client_list' %}">Clear Search</a>
+      </form> 
+
+      <div class="">
+    {% for client in clients %}
+    {% comment %} <a href="{% url 'client_detail' finch.pk %}" > {% endcomment %}
+    <div class="">
+      <div class="">
+        <p class="">{{client.name}}</p>
+      </div>
+      <div class="card-image">
+          <figure class="">
+          <img src="{{client.image}}" alt="{{client.name}}" />
+        </figure>
+        </div>
+      </div>
+        </a>
+    {% endfor %}
+  </div>
+{% endblock %}

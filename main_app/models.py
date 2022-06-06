@@ -31,7 +31,7 @@ class Client(models.Model):
     email = models.EmailField(max_length=50)
     phone = models.CharField(max_length=20)
     resume = models.CharField(max_length=100)
-    linkedIn = models.CharField(max_length=100)
+    linkedin = models.CharField(max_length=100)
     notes = models.TextField(max_length=500)
     created_at = models.DateTimeField(auto_now_add=True)
 
