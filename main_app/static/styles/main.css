@@ -1,3 +1,24 @@
 body {
     background-color: #d89898;
 }
+
+img {
+    max-width: 280px;
+    max-height: 400px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    justify-content: center;
+    gap: 30px;
+}
+
+.gallery .card {
+    transition: 0.1s linear;
+}
+
+.gallery .card:hover {
+    transform: scale(1.1);
+    z-index: 10;
+}

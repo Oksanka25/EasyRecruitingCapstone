@@ -8,16 +8,16 @@
             <input class="input" type="text" name="name" placeholder="name" />
           </div>
           <div class="">
-            <input class="button ml-1" type="submit" value="Search" />
+            <input class="btn btn-outline-primary ml-1" type="submit" value="Search" />
           </div>
         </div>
-        <a class="button" href="{% url 'client_list' %}">Clear Search</a>
+        <a class="btn btn-outline-secondary" type="button" href="{% url 'client_list' %}">Clear Search</a>
       </form> 
 
-      <div class="">
+    <div class="gallery">
     {% for client in clients %}
-    {% comment %} <a href="{% url 'client_detail' finch.pk %}" > {% endcomment %}
-    <div class="">
+    {% comment %} <a href="{% url 'client_detail' client.pk %}" > {% endcomment %}
+    <div class="card">
       <div class="">
         <p class="">{{client.name}}</p>
       </div>

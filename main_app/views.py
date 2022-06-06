@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views import View
 from django.views.generic.base import TemplateView
+from django.views.generic.edit import CreateView
 # import models
 from .models import Client
 
@@ -27,3 +28,11 @@ class ClientList(TemplateView):
             context["clients"] = Client.objects.all()
             context["header"] = "Clients"
         return context
+
+
+class ClientCreate(CreateView):
+    model = Client
+    fields = ['status', 'name', 'position', 'image', 'email',
+              'phone', 'resume', 'linkedin', 'notes']
+    template_name = "client_create.html"
+    success_url = "/clients/"
