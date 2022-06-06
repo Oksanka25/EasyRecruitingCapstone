@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.views import View
 from django.views.generic.base import TemplateView
 from django.views.generic.edit import CreateView
+from django.views.generic import DetailView
 # import models
 from .models import Client
 
@@ -36,3 +37,8 @@ class ClientCreate(CreateView):
               'phone', 'resume', 'linkedin', 'notes']
     template_name = "client_create.html"
     success_url = "/clients/"
+
+
+class ClientDetail(DetailView):
+    model = Client
+    template_name = "client_detail.html"

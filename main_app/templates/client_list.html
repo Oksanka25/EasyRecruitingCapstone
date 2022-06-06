@@ -16,7 +16,7 @@
 
     <div class="gallery">
     {% for client in clients %}
-    {% comment %} <a href="{% url 'client_detail' client.pk %}" > {% endcomment %}
+    <a href="{% url 'client_detail' client.pk %}" >
     <div class="card">
       <div class="">
         <p class="">{{client.name}}</p>
