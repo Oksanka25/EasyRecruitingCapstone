@@ -1,3 +1,4 @@
+from http import client
 from django.db import models
 
 # Create your models here.
@@ -40,3 +41,17 @@ class Client(models.Model):
 
     class Meta:
         ordering = ['name']
+
+
+class Interview(models.Model):
+    title = models.CharField(max_length=150)
+    company = models.CharField(max_length=150)
+    date = models.DateField()
+    feedback = models.CharField(max_length=300)
+    result = models.CharField(max_length=150)
+    notes = models.TextField(max_length=500)
+    client = models.ForeignKey(
+        Client, on_delete=models.CASCADE, related_name="clients")
+
+    def __str__(self):
+        return self.title
