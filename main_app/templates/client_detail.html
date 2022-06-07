@@ -26,4 +26,33 @@
     </div>
 </div>
 
+<h3 class="">Interview Record of {{client.name}}</h3>
+
+{% for interview in client.interviews.all %}
+<div>
+    <div>
+<span>{{forloop.counter}}</span>
+<span><b>Title: </b>{{interview.title}}</span>
+<span><b>Company: </b> {{interview.company}}</span>
+<span> <b>Date: </b>{{interview.date}}</span>
+    </div>
+<span> <b>Client's Feedback: </b>{{interview.feedback}}</span>
+<span><b>Result: </b>{{interview.result}}</span>
+<span><b>Notes: </b>{{interview.notes}}</span>
+
+</div>
+
+{% empty %}
+    <article class="message">
+      <div class="message-header">
+        <p>No Interviews Available</p>
+      </div>
+    </article>
+{% endfor %}
+
+<div class="mt-5">
+    <a href="{% url 'client_list' %}" >
+        <h3 class="mt-5"> Back to All Clients </h3>
+    </a>
+</div>
 {% endblock %}

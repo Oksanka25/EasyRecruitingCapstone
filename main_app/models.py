@@ -51,7 +51,7 @@ class Interview(models.Model):
     result = models.CharField(max_length=150)
     notes = models.TextField(max_length=500)
     client = models.ForeignKey(
-        Client, on_delete=models.CASCADE, related_name="clients")
+        Client, on_delete=models.CASCADE, related_name="interviews")
 
     def __str__(self):
         return self.title
