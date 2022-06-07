@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, include
 from . import views
 
 urlpatterns = [
@@ -17,5 +17,6 @@ urlpatterns = [
          views.InterviewUpdate.as_view(), name="interview_update"),
     path('interviews/<int:pk>/delete',
          views.InterviewDelete.as_view(), name="interview_delete"),
+    path('accounts/signup/', views.Signup.as_view(), name="signup")
 
 ]
