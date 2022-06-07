@@ -39,7 +39,15 @@
 <span> <b>Client's Feedback: </b>{{interview.feedback}}</span>
 <span><b>Result: </b>{{interview.result}}</span>
 <span><b>Notes: </b>{{interview.notes}}</span>
+    <div>
+<a href="{% url 'interview_update' interview.pk%}">
+    <button class="btn mr-3"> Update</button>
+</a>  
 
+<a href="{% url 'interview_delete' interview.pk%}">
+    <button class="btn mr-3"> Delete </button>
+</a>  
+    </div>
 </div>
 
 {% empty %}
@@ -50,9 +58,88 @@
     </article>
 {% endfor %}
 
+<form class="mb-4" action="{% url 'interview_create' client.pk %}" method="post">
+    {% csrf_token %}
+    <div class="field">
+        <div class="control">
+            <input
+                class="input  mb-1"
+                style="width: 33%;"
+                type="text"
+                name="title"
+                placeholder="Title"
+                required
+            />
+        </div>
+        <div class="control mb-1 ">
+            <input
+                class="input"
+                style="width: 33%;"
+                type="text"
+                name="company"
+                placeholder="Company"
+                min="1"
+                required
+            />
+        </div>
+        <div class="control mb-1 ">
+            <input
+                class="input is-primary"
+                style="width: 33%;"
+                type="date"
+                name="date"
+                placeholder="Date"
+                min="1"
+                required
+            />
+        </div>
+        <div class="control mb-1 ">
+            <input
+                class="input is-primary"
+                style="width: 33%;"
+                type="text"
+                name="feedback"
+                placeholder="Feedback"
+                min="1"
+                required
+            />
+        </div>
+        <div class="control mb-1 ">
+            <input
+                class="input is-primary"
+                style="width: 33%;"
+                type="text"
+                name="result"
+                placeholder="Results"
+                min="1"
+                required
+            />
+        </div>
+        <div class="control mb-1 ">
+            <input
+                class="input is-primary"
+                style="width: 33%;"
+                type="text"
+                name="notes"
+                placeholder="Notes"
+                min="1"
+                required
+            />
+        </div>
+        <div class="control">
+            <input class="btn" type="submit" value="Add Interview Record" />
+        </div>
+    </div>
+</form>
+
+
+
 <div class="mt-5">
     <a href="{% url 'client_list' %}" >
         <h3 class="mt-5"> Back to All Clients </h3>
     </a>
 </div>
+
+
+
 {% endblock %}

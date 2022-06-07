@@ -11,5 +11,11 @@ urlpatterns = [
          views.ClientUpdate.as_view(), name="client_update"),
     path('clients/<int:pk>/delete',
          views.ClientDelete.as_view(), name="client_delete"),
+    path('clients/<int:pk>/interviews/new/',
+         views.InterviewCreate.as_view(), name="interview_create"),
+    path('interviews/<int:pk>/update',
+         views.InterviewUpdate.as_view(), name="interview_update"),
+    path('interviews/<int:pk>/delete',
+         views.InterviewDelete.as_view(), name="interview_delete"),
 
 ]
