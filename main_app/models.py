@@ -55,3 +55,16 @@ class Interview(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    gender = models.CharField(
+        max_length=6,
+        choices=[('MALE', 'MALE'), ('FEMALE', 'FEMALE')]
+    )
+    state = models.CharField(max_length=20)
+    bio = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.user.username

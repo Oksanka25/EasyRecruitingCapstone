@@ -10,12 +10,10 @@ from .models import Client, Interview
 # auth
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
-# Auth
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 
 
-# Create your views here.
 class Home(TemplateView):
     template_name = 'home.html'
 
