@@ -89,3 +89,27 @@ a:active {
     vertical-align: middle;
     line-height: normal;
 }
+
+/* home */
+
+.home-background {
+    position: absolute;
+    background-image: url("https://img.freepik.com/free-vector/white-abstract-background_23-2148810113.jpg?t=st=1654792315~exp=1654792915~hmac=13912013d5eb20c51736311dffb1f5581716b54b885dc0b59890c7f0cfd621c7&w=1060");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+}
+
+.main-container {
+    width: 60%;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 4px;
+    text-align: center;
+    background: #f1f1f1;
+    padding: 2em;
+}

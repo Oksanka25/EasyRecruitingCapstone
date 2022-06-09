@@ -5,11 +5,17 @@
 <h2> All in One Place </h2>
 
 {% else %}
-<h2 class="title is-4"> Do you have an account?</h2>
-<button class="button is-primary is-light mb-5"><a  href="{% url 'login' %}">LOG IN</a></button> </div>
 
-<div>
-    <h2 class="title is-4"> Would you like to create an account?</h2>
-    <button class="button is-primary is-light mb-5"><a  href="{% url 'signup' %}">SIGN UP</a></button> </div>
+<div class="home-main">
+    <div class="home-background"></div>
+    <div class="main-container">
+        <h1 class="main-container__title pb-4 fw-bold">Welcome to EasyRecruiting</h1>
+        <h2 class="main-container__subtitle pb-5 fw-bold"> All Data in One Place </h2>
+        <div class="main-container__auth d-flex justify-content-center gap-4">
+            <a class="btn btn-outline border-secondary" type="button" href="{% url 'login' %}">LOG IN</a>
+            <a class="btn btn-outline border-secondary" type="button" href="{% url 'signup' %}">SIGN UP</a>
+        </div>
+    </div>
+</div>
  {% endif %}
 {% endblock %}
