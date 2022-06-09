@@ -22,3 +22,12 @@ img {
     transform: scale(1.1);
     z-index: 10;
 }
+
+a,
+a:link,
+a:visited,
+a:hover,
+a:active {
+    text-decoration: none;
+    color: inherit;
+}

@@ -8,7 +8,10 @@
             <input class="input" type="text" name="name" placeholder="name" />
           </div>
           <div class="">
-            <input class="btn btn-outline-primary ml-1" type="submit" value="Search" />
+            {% comment %} <input class="btn btn-outline-primary ml-1" type="submit" value="Search" /> {% endcomment %}
+            <button type="submit" class="btn btn-default btn-sm">
+              <span class="glyphicon glyphicon-search"></span> Search 
+            </button>
           </div>
         </div>
         <a class="btn btn-outline-secondary" type="button" href="{% url 'client_list' %}">Clear Search</a>

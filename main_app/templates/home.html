@@ -1,4 +1,15 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>Home</h1>
+{% if user.is_authenticated %}
+<h1>Welcome to EasyRecruiting</h1>
+<h2> All in One Place </h2>
+
+{% else %}
+<h2 class="title is-4"> Do you have an account?</h2>
+<button class="button is-primary is-light mb-5"><a  href="{% url 'login' %}">LOG IN</a></button> </div>
+
+<div>
+    <h2 class="title is-4"> Would you like to create an account?</h2>
+    <button class="button is-primary is-light mb-5"><a  href="{% url 'signup' %}">SIGN UP</a></button> </div>
+ {% endif %}
 {% endblock %}

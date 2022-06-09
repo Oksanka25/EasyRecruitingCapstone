@@ -41,11 +41,15 @@
 <span><b>Notes: </b>{{interview.notes}}</span>
     <div>
 <a href="{% url 'interview_update' interview.pk%}">
-    <button class="btn mr-3"> Update</button>
+    <button class="btn mr-3">
+         <span class="glyphicon glyphicon-edit"></span>
+    </button>
 </a>  
 
 <a href="{% url 'interview_delete' interview.pk%}">
-    <button class="btn mr-3"> Delete </button>
+    <button type="button" class="btn btn-default btn-sm">
+        <span class="glyphicon glyphicon-trash"></span> 
+      </button>
 </a>  
     </div>
 </div>
@@ -127,7 +131,7 @@
             />
         </div>
         <div class="control">
-            <input class="btn" type="submit" value="Add Interview Record" />
+            <input class="btn btn-outline-success" type="submit" value="Add Interview Record" />
         </div>
     </div>
 </form>
