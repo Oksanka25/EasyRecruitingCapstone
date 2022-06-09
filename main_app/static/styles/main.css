@@ -31,3 +31,27 @@ a:active {
     text-decoration: none;
     color: inherit;
 }
+
+/* login */
+
+.login-content {
+    width: 250px;
+    height: 250px;
+    background-color: #f1f1f1;
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    margin: auto;
+    padding: 10px;
+    align-items: center;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.login-label {
+    color: black;
+}

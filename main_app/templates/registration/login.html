@@ -1,28 +1,28 @@
-{% extends 'base.html' %} 
+{% extends 'base.html' %}
 {% block title %}
-    Login
+Login
 {% endblock %}
 
 {% block content %}
-    <div class="container">
-            <div class="column is-half is-offset-one-quarter">
-                <h3 class="title is-size-3">Login</h3>
-                <form action="{% url 'login' %}" method="post">
-                    {% csrf_token %}
-                    {% for non_field_error in form.non_field_errors %}
-                        <p class="help is-danger">{{ non_field_error }}</p>
-                    {% endfor %}
-                    {% for field in form %}
-                        <div class="field">
-                            <label for="{{ field.id_for_label }}" class="label">{{ field.html_name }}</label>
-                            {{ field }}
-                        {% for error in field.errors %}
-                            <p class="help is-danger">{{ error }}</p>
-                        {% endfor %}
-                        </div>
-                    {% endfor %}
-                    <input type="submit" value="LOG IN" class="button is-primary">
-                </form>
+<div class="login-container">
+    <div class="login-content">
+        <h3 class="">Login</h3>
+        <form action="{% url 'login' %}" method="post">
+            {% csrf_token %}
+            {% for non_field_error in form.non_field_errors %}
+            <p class="">{{ non_field_error }}</p>
+            {% endfor %}
+            {% for field in form %}
+            <div class="">
+                <label for="{{ field.id_for_label }}" class="login-label">{{ field.html_name }}</label>
+                {{ field }}
+                {% for error in field.errors %}
+                <p class="">{{ error }}</p>
+                {% endfor %}
             </div>
+            {% endfor %}
+            <input class="btn btn-outline border-secondary mt-2" type="submit" value="LOG IN" class="button">
+        </form>
     </div>
+</div>
 {% endblock %}
