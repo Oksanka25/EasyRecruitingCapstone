@@ -13,7 +13,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 
-from .forms import ClientForm
+from .forms import ClientForm, InterviewForm
 
 
 class Home(TemplateView):
@@ -101,7 +101,8 @@ class InterviewCreate(View):
 @method_decorator(login_required, name='dispatch')
 class InterviewUpdate(UpdateView):
     model = Interview
-    fields = ['title', 'company', 'date', 'feedback', 'result', 'notes']
+    form_class = InterviewForm
+    # fields = ['title', 'company', 'date', 'feedback', 'result', 'notes']
     template_name = "interview_update.html"
 
     def get_success_url(self):

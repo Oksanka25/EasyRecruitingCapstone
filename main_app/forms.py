@@ -1,6 +1,6 @@
 
-from django import forms
 from .models import Client, Interview
+from django import forms
 
 
 class ClientForm(forms.ModelForm):
@@ -10,7 +10,7 @@ class ClientForm(forms.ModelForm):
                   'phone', 'resume', 'linkedin', 'notes')
         widgets = {
             'status': forms.Select(attrs={'class': 'form-control'}),
-            'name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Name'}),
+            'name': forms.TextInput(attrs={'class': 'form-control'}),
             'position': forms.TextInput(attrs={'class': 'form-control'}),
             'image': forms.TextInput(attrs={'class': 'form-control'}),
             'email': forms.TextInput(attrs={'class': 'form-control'}),
@@ -22,15 +22,19 @@ class ClientForm(forms.ModelForm):
         }
 
 
-# class InterviewForm(forms.ModelForm):
-    # class Meta:
-    #     model = Interview
-    #     fields = ('title', 'company', 'date', 'feedback', 'result', 'notes')
-    #     widgets = {
-    #         'title': forms.TextInput(attrs={'class': 'form-control'}),
-    #         'company': forms.TextInput(attrs={'class': 'form-control'}),
-    #         'date': forms.DateField(attrs={'class': 'form-control'}),
-    #         'feedback': forms.TextInput(attrs={'class': 'form-control'}),
-    #         'result': forms.TextInput(attrs={'class': 'form-control'}),
-    #         'notes': forms.TextArea(attrs={'class': 'form-control'}),
-    #     }
+class InterviewForm(forms.ModelForm):
+    class Meta:
+        model = Interview
+        fields = ('title', 'company', 'date', 'feedback', 'result', 'notes')
+        widgets = {
+            'title': forms.TextInput(attrs={'class': 'form-control'}),
+            'company': forms.TextInput(attrs={'class': 'form-control'}),
+            'date': forms.DateInput(attrs={
+                'class': 'form-control datetimepicker-input',
+                'data-target': '#datepicker1'
+            }),
+
+            'feedback': forms.TextInput(attrs={'class': 'form-control'}),
+            'result': forms.TextInput(attrs={'class': 'form-control'}),
+            'notes': forms.Textarea(attrs={'class': 'form-control'}),
+        }
