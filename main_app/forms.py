@@ -1,6 +1,6 @@
 
-from .models import Client, Interview
 from django import forms
+from .models import Client, Interview
 
 
 class ClientForm(forms.ModelForm):
@@ -20,7 +20,6 @@ class ClientForm(forms.ModelForm):
             'notes': forms.Textarea(attrs={'class': 'form-control'}),
 
         }
-
 
 class InterviewForm(forms.ModelForm):
     class Meta:

@@ -2,6 +2,7 @@
 
 * {
     font-family: 'Gentium Plus', serif;
+    font-size: 16px;
 }
 
 body {
@@ -37,8 +38,6 @@ a:active {
     text-decoration: none !important;
     color: inherit;
 }
-
-
 
 /* login */
 
@@ -118,6 +117,11 @@ a:active {
 
 /* client_detail */
 
+.client-detail {
+    background: #f1f1f1;
+    border-radius: 6px;
+}
+
 .detail__img {
     border-radius: 3%;
     min-width: 100%;
@@ -131,6 +135,10 @@ a:active {
 
 .detail-info {
     width: 59%;
+}
+
+.interview-record {
+    background: #f7f7f7;
 }
 
 .interview-inputs-first,
@@ -148,6 +156,9 @@ a:active {
 
 /* clients_list */
 
+.nav-container,
+.about-page-container,
+.signup-page-container,
 .clients-page-container,
 .client-detail-container {
     max-width: 1024px;
@@ -179,4 +190,33 @@ a:active {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+
+/* interview_update */
+
+.general-form {
+    width: 50%;
+}
+
+
+/* recruiting */
+
+.recruiting-image-container {
+    width: 100%;
+}
+
+.recruiting-image {
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+/* signup */
+
+.signup-page-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }

@@ -1,18 +1,16 @@
-{% extends 'base.html' %} 
-{% block title %} Update {{client.name}} {% endblock %}
-
+{% extends 'base.html' %}
 {% block content %}
 <h1 class="pt-3 d-flex justify-content-center mb-5">Update {{client.name}}</h1>
 
 <div class="d-flex justify-content-center mb-5">
-  <div class="form-group">
+  <div class="general-form form-group">
     <form method="post">
-      {% csrf_token %} 
-      {{form.as_p}} 
-      <input type="submit" value="Submit" />
-    </div>
+      {% csrf_token %}
+      {{form.as_p}}
+      <input type="submit" value="Update" />
+  </div>
 </div>
-    </form>
+</form>
 
 
 

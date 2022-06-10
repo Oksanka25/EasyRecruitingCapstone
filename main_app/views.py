@@ -16,6 +16,8 @@ from django.utils.decorators import method_decorator
 from .forms import ClientForm, InterviewForm
 
 
+
+
 class Home(TemplateView):
     template_name = 'home.html'
 
@@ -104,9 +106,10 @@ class InterviewUpdate(UpdateView):
     form_class = InterviewForm
     # fields = ['title', 'company', 'date', 'feedback', 'result', 'notes']
     template_name = "interview_update.html"
-
+    
     def get_success_url(self):
         return reverse('client_detail', kwargs={'pk': self.object.client_id})
+
 
 
 @method_decorator(login_required, name='dispatch')

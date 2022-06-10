@@ -1,18 +1,14 @@
-{% extends 'base.html' %} 
-{% block title %} Update Interview Record {% endblock %}
-{% block content %}
-<h1 class="d-flex justify-content-center">Update</h1>
-<h2 class="d-flex justify-content-center mb-5">{{interview.title}}</h2>
-
+{% extends 'base.html' %} {% block content %}
+<h1 class="d-flex justify-content-center mb-5 pt-3">Update {{client.name}}</h1>
 
 <div class="d-flex justify-content-center mb-5">
-  <div class="form-group">
+  <div class="general-form form-group">
     <form method="post">
-      {% csrf_token %} 
-      {{form.as_p}} 
+      {% csrf_token %}
+      {{form.as_p}}
       <input type="submit" value="Submit" />
-    </div>
+  </div>
 </div>
-    </form>
+</form>
 
 {% endblock %}

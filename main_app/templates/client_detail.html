@@ -1,11 +1,10 @@
 {% extends 'base.html' %}
-{% block title %} {{client.name}} {% endblock %}
 {% block content %}
 <div class="client-detail-container mb-4">
-    <div class="client-detail d-flex gap-5">
-        <div class="detail-img-container mb-5">
+    <div class="client-detail d-flex gap-5 p-4">
+        <div class="detail-img-container mb-5 pb-2">
             <img class="detail__img mb-4" src="{{client.image}}" alt="{{client.name}}" />
-            <p class="detail__p d-flex justify-content-center"> <strong>Status: </strong>  {{client.status}}</p> 
+            <p class="detail__p d-flex gap-2 justify-content-center"> <strong>Status: </strong> {{ client.status}}</p> 
         </div>
         <div class="detail-info">
             <div class="detail__about">
@@ -15,10 +14,9 @@
                 <p class="detail__p"> <strong>Phone:</strong> {{client.phone}}</p>
                 <p> <a href="{{client.resume}}"> <i class="bi bi-file-earmark-person-fill"></i> Resume </a> </p>
                 <p> <a href="{{client.linkedin}}"> <i class="bi bi-linkedin" style="color:blue"></i>  LinkedIn</a> </p>
-                <p class="detail__p"> <strong>Notes:</strong> {{client.notes}}</p>
+                <p class="detail__p"> <strong>Notes:</strong> <span>{{client.notes}}</span></p>
                 
             </div>
-
             <div class="detail-actions">
                 <a href="{% url 'client_update' client.pk %}">
                     <button class="btn btn-outline mr-3" style="color:green" > <span class="glyphicon glyphicon-edit" style="color:green"></span> Update</button>
@@ -28,35 +26,39 @@
                     <button class="btn btn-outline" style="color:red"> <span class="glyphicon glyphicon-trash" style="color:red"></span> Delete</button>
                 </a>
             </div>
+
         </div>
     </div>
+
     <h3 class="">Interview Record of {{client.name}}</h3>
 
     {% for interview in client.interviews.all %}
-    <div class="border p-4 mb-4">
-        <div class="d-flex gap-5">
-            <div class="">
-                <p><b>Title: </b>{{interview.title}}</p>
-                <p><b>Company: </b> {{interview.company}}</p>
-                <p><b>Date: </b>{{interview.date}}</p>
+    <div class="interview-record border p-4 mb-4">
+        <div class="d-flex gap-5 justify-content-between">
+            <div class="d-flex gap-5 ">
+                <div class="">
+                    <p><b>Title: </b>{{interview.title}}</p>
+                    <p><b>Company: </b> {{interview.company}}</p>
+                    <p><b>Date: </b>{{interview.date}}</p>
+                </div>
+                <div class="">
+                    <p><b>Client's Feedback: </b>{{interview.feedback}}</p>
+                    <p><b>Result: </b>{{interview.result}}</p>
+                    <p><b>Notes: </b>{{interview.notes}}</p>
+                </div>
             </div>
-            <div class="">
-                <p><b>Client's Feedback: </b>{{interview.feedback}}</p>
-                <p><b>Result: </b>{{interview.result}}</p>
-                <p><b>Notes: </b>{{interview.notes}}</p>
+            <div class="d-flex flex-column gap-3 align-items-center">
+                <a href="{% url 'interview_update' interview.pk%}">
+                    <button class="btn mr-3 fs-4">
+                        <span class="glyphicon glyphicon-edit" style="color:green"></span>
+                    </button>
+                </a>
+                <a href="{% url 'interview_delete' interview.pk%}">
+                    <button type="button" class="btn btn-sm fs-4">
+                        <span class="glyphicon glyphicon-trash "style="color:red"></span>
+                    </button>
+                </a>
             </div>
-        </div>
-        <div class="">
-            <a href="{% url 'interview_update' interview.pk%}">
-                <button class="btn mr-3">
-                    <span class="glyphicon glyphicon-edit" style="color:green"></span>
-                </button>
-            </a>
-            <a href="{% url 'interview_delete' interview.pk%}">
-                <button type="button" class="btn btn-default btn-sm">
-                    <span class="glyphicon glyphicon-trash "style="color:red"></span>
-                </button>
-            </a>
         </div>
         <div>
         </div>
@@ -84,14 +86,17 @@
                 <input name="notes" placeholder="Notes" min="1" required />
             </div>
             <div class="">
-                <input class="btn btn-outline-success" type="submit" value="Add Interview Record" />
+                <button class="btn btn-outline" style="color: green" type="submit">
+                    <i class="bi bi-plus-circle" style="color: green"></i>
+                    Add Interview Record
+                </button>
             </div>
         </div>
     </form>
 
-    <div class="mt-5">
+    <div class="mt-5 pb-4">
         <a href="{% url 'client_list' %}">
-            <h3 class="mt-5"> Back to All Clients </h3>
+            <h3 class="mt-5"> <i class="bi bi-arrow-return-left"></i> Back to All Clients </h3>
         </a>
     </div>
 

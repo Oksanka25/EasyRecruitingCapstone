@@ -1,13 +1,10 @@
-{% extends 'base.html' %} 
-{% block title %} Delete Interview Record {% endblock %}
-
-{% block content %}
-<h1 class="title pt-5">Are you sure you want to Delete {{interview.title}}?</h1>
-<form method="post">
+{% extends 'base.html' %} {% block content %}
+<h1 class="text-center pt-5">Are you sure you want to Delete {{interview.title}}?</h1>
+<form class="text-center pt-5" method="post">
     {% csrf_token %}
     <div class="">
-        <input class="btn" type="submit" value="Confirm" />
-        <a class="btn" href="{% url 'client_detail' interview.client_id %}">Cancel</a>
+        <input class="btn btn-outline fs-3" style="color:red" type="submit" value="Confirm" />
+        <a class="btn btn-outline fs-3" style="color:green" href="{% url 'client_detail' interview.client_id %}">Cancel</a>
     </div>
 </form>
 {% endblock %}
