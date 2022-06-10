@@ -13,6 +13,8 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 
+from .forms import ClientForm
+
 
 class Home(TemplateView):
     template_name = 'home.html'
@@ -42,8 +44,9 @@ class ClientList(TemplateView):
 @method_decorator(login_required, name='dispatch')
 class ClientCreate(CreateView):
     model = Client
-    fields = ['status', 'name', 'position', 'image', 'email',
-              'phone', 'resume', 'linkedin', 'notes']
+    form_class = ClientForm
+    # fields = ['status', 'name', 'position', 'image', 'email',
+    #           'phone', 'resume', 'linkedin', 'notes']
     template_name = "client_create.html"
 
     def form_valid(self, form):
@@ -64,8 +67,9 @@ class ClientDetail(DetailView):
 @method_decorator(login_required, name='dispatch')
 class ClientUpdate(UpdateView):
     model = Client
-    fields = ['status', 'name', 'position', 'image', 'email',
-              'phone', 'resume', 'linkedin', 'notes']
+    form_class = ClientForm
+    # fields = ['status', 'name', 'position', 'image', 'email',
+    #           'phone', 'resume', 'linkedin', 'notes']
     template_name = "client_update.html"
 
     def get_success_url(self):

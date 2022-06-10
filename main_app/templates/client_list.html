@@ -1,36 +1,35 @@
 {% extends 'base.html' %}
 {% block title %} Clients {% endblock %}
 {% block content %}
-    <h1 class="">{{header}}</h1>
-    <form class="mb-5" method="get">
-        <div class="">
-          <div class="">
-            <input class="input" type="text" name="name" placeholder="name" />
-          </div>
-          <div class="">
-            {% comment %} <input class="btn btn-outline-primary ml-1" type="submit" value="Search" /> {% endcomment %}
-            <button type="submit" class="btn btn-default btn-sm">
-              <span class="glyphicon glyphicon-search"></span> Search 
-            </button>
-          </div>
-        </div>
-        <a class="btn btn-outline-secondary" type="button" href="{% url 'client_list' %}">Clear Search</a>
-      </form> 
+<div class="clients-page-container mb-5">
 
-    <div class="gallery">
-    {% for client in clients %}
-    <a href="{% url 'client_detail' client.pk %}" >
-    <div class="card">
-      <div class="">
-        <p class="">{{client.name}}</p>
+  <h1 class="">{{header}}</h1>
+  <form class="mb-5" method="get">
+    <div class="search-client d-flex gap-3">
+      <div class="search-input d-flex position-relative">
+        <input class="form-control" type="text" name="name" placeholder="name" />
+        <a class="clear-search" type="button" href="{% url 'client_list' %}">&#10006;</a>
       </div>
-      <div class="card-image">
-          <figure class="">
-          <img src="{{client.image}}" alt="{{client.name}}" />
-        </figure>
+      <div class="d-flex gap-3">
+          <button type="submit" class="btn btn-default btn-sm">
+            <span class="glyphicon glyphicon-search"></span> Search 
+          </button>
+            {% comment %} <a class="btn btn-outline" type="button" href="{% url 'client_list' %}">Clear Search</a> {% endcomment %}
         </div>
       </div>
+  </form> 
+      
+      <div class="gallery">
+        {% for client in clients %}
+        <a href="{% url 'client_detail' client.pk %}" >
+          <div class="gallery-card card align-items-center p-2">
+            <p class="card-title fs-3">{{client.name}}</p>
+            <div class="card-image pb-4">
+                <img src="{{client.image}}" alt="{{client.name}}" />
+            </div>
+          </div>
         </a>
-    {% endfor %}
-  </div>
+        {% endfor %}
+      </div>
+    </div>
 {% endblock %}

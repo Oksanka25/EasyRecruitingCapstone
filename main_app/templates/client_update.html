@@ -1,19 +1,11 @@
 {% extends 'base.html' %} 
-{% load bootstrap5form %}
 {% block content %}
 <h1 class="pt-3 d-flex justify-content-center mb-5">Update {{client.name}}</h1>
 
-{% comment %} <form action="" method="post">
+<form action="" method="post">
   {% csrf_token %} {{form.as_p}} <input type="submit" value="Submit" />
-</form> {% endcomment %}
-
-<form role="form" >
-  {% csrf_token %}
-  {{ form|bootstrap5form }}
-  <div class="form-group">
-    <button type="submit" class="btn btn-primary">Add Client</button>
-  </div>
 </form> 
+
 
 
 {% endblock %}

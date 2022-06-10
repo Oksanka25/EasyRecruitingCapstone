@@ -143,3 +143,38 @@ a:active {
 .interview-inputs-second input {
     min-width: 49%;
 }
+
+/* clients_list */
+
+.clients-page-container,
+.client-detail-container {
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+.clear-search {
+    position: absolute;
+    right: 6px;
+}
+
+.search-input {
+    width: 100%;
+    align-items: center;
+}
+
+.card-title {
+    text-align: center;
+}
+
+.card-image {
+    height: 250px;
+    width: 230px;
+    margin-right: 0;
+    padding-right: 0;
+}
+
+.card-image>img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

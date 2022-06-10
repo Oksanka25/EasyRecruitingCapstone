@@ -2,10 +2,10 @@
 {% block content %}
 <div class="client-detail-container mb-4">
     <div class="client-detail d-flex gap-5">
-        <div class="detail-img-container">
+        <div class="detail-img-container mb-5">
             <img class="detail__img mb-4" src="{{client.image}}" alt="{{client.name}}" />
+            <p class="detail__p d-flex justify-content-center"> <strong>Status: </strong>  {{client.status}}</p> 
         </div>
-        <!-- <p class="detail__p"> <strong>Status:</strong> {{client.status}}</p> -->
         <div class="detail-info">
             <div class="detail__about">
                 <h1 class="">{{client.name}}</h1>
