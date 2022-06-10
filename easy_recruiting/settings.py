@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
+import django_on_heroku
 import os
 from pathlib import Path
 
@@ -127,3 +128,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = '/clients/'
 LOGOUT_REDIRECT_URL = '/'
+
+django_on_heroku.settings(locals())
