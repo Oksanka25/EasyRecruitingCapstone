@@ -1,11 +1,69 @@
 {% extends 'base.html' %} 
+{% load bootstrap5form %}
 {% block content %}
-<h1>Add a Client</h1>
+{% comment %} <div class="container">
+  <div class="">
+      <div class="">
+          <div class="content"><h2>Add a Client</h2></div>
+          <form method="post">
+              {% csrf_token %}
+              {% for non_field_error in form.non_field_errors %}
+                  <p class="help is-danger">{{ non_field_error }}</p>
+              {% endfor %}
+              {% for field in form %}
+                  <div class="field">
+                      <label for="{{ field.id_for_label }}" class="label">{{ field.html_name }}</label>
+                      {{ field }}
+                  {% for error in field.errors %}
+                      <p class="help is-danger">{{ error }}</p>
+                  {% endfor %}
+                  </div>
+              {% endfor %}
+              <input type="submit" value="Add Client" class="btn">
+          </form>
+      </div>
+  </div>
+</div> {% endcomment %}
 
-<form method="post">
-  {% csrf_token %} 
-  {{form.as_p}} 
-  <input type="submit" value="Add a Client" />
+<form role="form" class="position-relative">
+    <legend class="d-flex justify-content-center mb-5">Add a Client</legend>
+    {% csrf_token %}
+    {{ form|bootstrap5form }}
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary">Add Client</button>
+    </div>
+</form> 
+
+{% comment %} <form class="form-horizontal">
+  <legend>Form Title</legend>
+  {% csrf_token %}
+  {{ form|bootstrap5form_horizontal }}
+  <div class="form-group">
+    <div class="col-sm-10 col-sm-offset-2">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </div>
 </form>
+
+ {% endcomment %}
+
+{% comment %} {% if form.non_field_errors %}
+    <div class="alert alert-danger" role="alert">
+        <a class="close" data-dismiss="alert">&times;</a>
+        {% for non_field_error in form.non_field_errors %}
+             {{ non_field_error }}
+        {% endfor %}
+    </div>
+{% endif %}
+
+{% for field in form.hidden_fields %}
+    {{ field }}
+{% endfor %}
+
+{% for field in form.visible_fields %}
+    {% include 'bootstrap5form/field.html' %}
+{% endfor %} {% endcomment %}
+
+
 
 {% endblock %}
