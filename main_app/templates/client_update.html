@@ -2,9 +2,15 @@
 {% block content %}
 <h1 class="pt-3 d-flex justify-content-center mb-5">Update {{client.name}}</h1>
 
-<form action="" method="post">
-  {% csrf_token %} {{form.as_p}} <input type="submit" value="Submit" />
-</form> 
+<div class="d-flex justify-content-center mb-5">
+  <div class="form-group">
+    <form method="post">
+      {% csrf_token %} 
+      {{form.as_p}} 
+      <input type="submit" value="Add Client" />
+    </div>
+</div>
+    </form>
 
 
 
