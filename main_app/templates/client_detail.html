@@ -1,149 +1,98 @@
-{% extends 'base.html' %} 
+{% extends 'base.html' %}
 {% block content %}
-<div class="detail__container mb-4">
-    <div class="detail__img mb-4">
-        <img  src="{{client.image}}" alt="{{client.name}}" />
-        <p class="detail__p"> <strong>Status:</strong> {{client.status}}</p>
+<div class="client-detail-container mb-4">
+    <div class="client-detail d-flex gap-5">
+        <div class="detail-img-container">
+            <img class="detail__img mb-4" src="{{client.image}}" alt="{{client.name}}" />
+        </div>
+        <!-- <p class="detail__p"> <strong>Status:</strong> {{client.status}}</p> -->
+        <div class="detail-info">
+            <div class="detail__about">
+                <h1 class="">{{client.name}}</h1>
+                <p class="detail__p"> <strong>Position:</strong> {{client.position}}</p>
+                <p class="detail__p"> <strong>Email:</strong> {{client.email}}</p>
+                <p class="detail__p"> <strong>Phone:</strong> {{client.phone}}</p>
+                <p> <a href="{{client.resume}}"> Resume</a> </p>
+                <p> <a href="{{client.linkedin}}"> LinkedIn</a> </p>
+                <p class="detail__p"> <strong>Notes:</strong> {{client.notes}}</p>
+            </div>
+
+            <div class="detail-actions">
+                <a href="{% url 'client_update' client.pk %}">
+                    <button class="btn btn-outline-success mr-3"> Update</button>
+                </a>
+                <a href="{% url 'client_delete' client.pk %}">
+                    <button class="btn btn-outline-danger"> Delete</button>
+                </a>
+            </div>
+        </div>
     </div>
-    <div class="detail__about">
-        <h1 class="">{{client.name}}</h1>
-        <p class="detail__p"> <strong>Position:</strong>  {{client.position}}</p>
-        <p class="detail__p"> <strong>Email:</strong> {{client.email}}</p>
-        <p class="detail__p"> <strong>Phone#:</strong> {{client.phone}}</p>
-        <p> <a href="{{client.resume}}"> Resume</a> </p>
-        <p> <a href="{{client.linkedin}}"> LinkedIn</a> </p>
-        <p class="detail__p"> <strong>Notes:</strong> {{client.notes}}</p>
-        
+    <h3 class="">Interview Record of {{client.name}}</h3>
+
+    {% for interview in client.interviews.all %}
+    <div class="border p-4 mb-4">
+        <div class="d-flex gap-5">
+            <div class="">
+                <p><b>Title: </b>{{interview.title}}</p>
+                <p><b>Company: </b> {{interview.company}}</p>
+                <p><b>Date: </b>{{interview.date}}</p>
+            </div>
+            <div class="">
+                <p><b>Client's Feedback: </b>{{interview.feedback}}</p>
+                <p><b>Result: </b>{{interview.result}}</p>
+                <p><b>Notes: </b>{{interview.notes}}</p>
+            </div>
+        </div>
+        <div class="">
+            <a href="{% url 'interview_update' interview.pk%}">
+                <button class="btn mr-3">
+                    <span class="glyphicon glyphicon-edit"></span>
+                </button>
+            </a>
+            <a href="{% url 'interview_delete' interview.pk%}">
+                <button type="button" class="btn btn-default btn-sm">
+                    <span class="glyphicon glyphicon-trash"></span>
+                </button>
+            </a>
+        </div>
+        <div>
+        </div>
     </div>
 
-    <div class="">
-        <a href="{% url 'client_update' client.pk %}" >
-            <button class="btn btn-outline-success mr-3"> Update</button>
-        </a>
-        <a href="{% url 'client_delete' client.pk %}" >
-                <button class="btn btn-outline-danger"> Delete</button>
-        </a> 
-    </div>
-</div>
-
-<h3 class="">Interview Record of {{client.name}}</h3>
-
-{% for interview in client.interviews.all %}
-<div>
-    <div>
-<span>{{forloop.counter}}</span>
-<span><b>Title: </b>{{interview.title}}</span>
-<span><b>Company: </b> {{interview.company}}</span>
-<span> <b>Date: </b>{{interview.date}}</span>
-    </div>
-<span> <b>Client's Feedback: </b>{{interview.feedback}}</span>
-<span><b>Result: </b>{{interview.result}}</span>
-<span><b>Notes: </b>{{interview.notes}}</span>
-    <div>
-<a href="{% url 'interview_update' interview.pk%}">
-    <button class="btn mr-3">
-         <span class="glyphicon glyphicon-edit"></span>
-    </button>
-</a>  
-
-<a href="{% url 'interview_delete' interview.pk%}">
-    <button type="button" class="btn btn-default btn-sm">
-        <span class="glyphicon glyphicon-trash" style="color:red"></span> 
-      </button>
-</a>  
-    </div>
-</div>
-
-{% empty %}
+    {% empty %}
     <article class="message">
-      <div class="message-header">
-        <p>No Interviews Available</p>
-      </div>
+        <div class="message-header">
+            <p>No Interviews Available</p>
+        </div>
     </article>
-{% endfor %}
+    {% endfor %}
 
-<form class="mb-4" action="{% url 'interview_create' client.pk %}" method="post">
-    {% csrf_token %}
-    <div class="field">
-        <div class="control">
-            <input
-                class="input  mb-1"
-                style="width: 33%;"
-                type="text"
-                name="title"
-                placeholder="Title"
-                required
-            />
+    <form class="d-flex" action="{% url 'interview_create' client.pk %}" method="post">
+        {% csrf_token %}
+        <div class="interview-inputs">
+            <div class="interview-inputs-first field d-flex gap-3 flex-wrap mb-3">
+                <input name="title" placeholder="Title" required />
+                <input name="company" placeholder="Company" min="1" required />
+                <input type="date" name="date" placeholder="Date" min="1" required />
+                <input name="result" placeholder="Results" min="1" required />
+            </div>
+            <div class="interview-inputs-second field d-flex gap-3 flex-wrap mb-3">
+                <input name="feedback" placeholder="Feedback" min="1" required />
+                <input name="notes" placeholder="Notes" min="1" required />
+            </div>
+            <div class="">
+                <input class="btn btn-outline-success" type="submit" value="Add Interview Record" />
+            </div>
         </div>
-        <div class="control mb-1 ">
-            <input
-                class="input"
-                style="width: 33%;"
-                type="text"
-                name="company"
-                placeholder="Company"
-                min="1"
-                required
-            />
-        </div>
-        <div class="control mb-1 ">
-            <input
-                class="input is-primary"
-                style="width: 33%;"
-                type="date"
-                name="date"
-                placeholder="Date"
-                min="1"
-                required
-            />
-        </div>
-        <div class="control mb-1 ">
-            <input
-                class="input is-primary"
-                style="width: 33%;"
-                type="text"
-                name="feedback"
-                placeholder="Feedback"
-                min="1"
-                required
-            />
-        </div>
-        <div class="control mb-1 ">
-            <input
-                class="input is-primary"
-                style="width: 33%;"
-                type="text"
-                name="result"
-                placeholder="Results"
-                min="1"
-                required
-            />
-        </div>
-        <div class="control mb-1 ">
-            <input
-                class="input is-primary"
-                style="width: 33%;"
-                type="text"
-                name="notes"
-                placeholder="Notes"
-                min="1"
-                required
-            />
-        </div>
-        <div class="control">
-            <input class="btn btn-outline-success" type="submit" value="Add Interview Record" />
-        </div>
+    </form>
+
+    <div class="mt-5">
+        <a href="{% url 'client_list' %}">
+            <h3 class="mt-5"> Back to All Clients </h3>
+        </a>
     </div>
-</form>
 
-
-
-<div class="mt-5">
-    <a href="{% url 'client_list' %}" >
-        <h3 class="mt-5"> Back to All Clients </h3>
-    </a>
 </div>
-
 
 
 {% endblock %}

@@ -113,3 +113,33 @@ a:active {
     background: #f1f1f1;
     padding: 2em;
 }
+
+/* client_detail */
+
+.detail__img {
+    border-radius: 3%;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+}
+
+.detail-img-container {
+    width: 40%
+}
+
+.detail-info {
+    width: 59%;
+}
+
+.interview-inputs-first,
+.interview-inputs {
+    width: 100%;
+}
+
+.interview-inputs-first input {
+    min-width: 24%;
+}
+
+.interview-inputs-second input {
+    min-width: 49%;
+}
