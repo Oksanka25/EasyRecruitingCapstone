@@ -12,17 +12,19 @@
                 <p class="detail__p"> <strong>Position:</strong> {{client.position}}</p>
                 <p class="detail__p"> <strong>Email:</strong> {{client.email}}</p>
                 <p class="detail__p"> <strong>Phone:</strong> {{client.phone}}</p>
-                <p> <a href="{{client.resume}}"> Resume</a> </p>
-                <p> <a href="{{client.linkedin}}"> LinkedIn</a> </p>
+                <p> <a href="{{client.resume}}"> <i class="bi bi-file-earmark-person-fill"></i> Resume </a> </p>
+                <p> <a href="{{client.linkedin}}"> <i class="bi bi-linkedin" style="color:blue"></i>  LinkedIn</a> </p>
                 <p class="detail__p"> <strong>Notes:</strong> {{client.notes}}</p>
+                
             </div>
 
             <div class="detail-actions">
                 <a href="{% url 'client_update' client.pk %}">
-                    <button class="btn btn-outline-success mr-3"> Update</button>
+                    <button class="btn btn-outline-success mr-3"> <span class="glyphicon glyphicon-edit" style="color:green"></span> Update</button>
+
                 </a>
                 <a href="{% url 'client_delete' client.pk %}">
-                    <button class="btn btn-outline-danger"> Delete</button>
+                    <button class="btn btn-outline-danger"> <span class="glyphicon glyphicon-trash" style="color:red"></span> Delete</button>
                 </a>
             </div>
         </div>
@@ -46,12 +48,12 @@
         <div class="">
             <a href="{% url 'interview_update' interview.pk%}">
                 <button class="btn mr-3">
-                    <span class="glyphicon glyphicon-edit"></span>
+                    <span class="glyphicon glyphicon-edit" style="color:green"></span>
                 </button>
             </a>
             <a href="{% url 'interview_delete' interview.pk%}">
                 <button type="button" class="btn btn-default btn-sm">
-                    <span class="glyphicon glyphicon-trash"></span>
+                    <span class="glyphicon glyphicon-trash "style="color:red"></span>
                 </button>
             </a>
         </div>
