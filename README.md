@@ -1,7 +1,7 @@
 # EasyRecruiting
 
 ## About the Project
-EasyRecruiting is an app that allows recruiters to keep track of their applicants very easily. A user can create profiles of the applicants and add all their information, as well as keep track of the interviews that the applicant had and the results. All in One place. 
+EasyRecruiting is an app that allows recruiters to keep track of their applicants very easily. A user can create profiles of the applicants and add all their information, as well as keep track of the interviews that the applicant had and the results. All in One Place. 
 
 ## User Stories
 - As a user, I should be able to create an account.
