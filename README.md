@@ -44,6 +44,8 @@ Hosted on Heroku: https://easy-recruiting.herokuapp.com/
 
 
 ## Wireframes
-![Screen Shot 2022-06-12 at 5 18 37 PM](https://user-images.githubusercontent.com/101350351/173254016-97364a7c-586a-4f66-813c-2ebef3d10976.png)
-![image](https://user-images.githubusercontent.com/101350351/173254040-b183834d-71a5-433c-bac7-88753a61fa1d.png)
-![image](https://user-images.githubusercontent.com/101350351/173254114-d8462e17-194b-4f16-a660-31ca98748c3d.png)
+![ECB581B9-4D69-4817-8C34-A1CC15853E63_1_201_a](https://user-images.githubusercontent.com/101350351/173254424-7049a1cb-f725-4fe7-bba6-a266a1ffe396.jpeg)
+![B96BAB66-4AA5-4D3F-8AAE-35FFF928032E_1_201_a](https://user-images.githubusercontent.com/101350351/173254607-b453b659-f03d-4737-ace9-4fd32905aa42.jpeg)
+![C4E7A633-A9A5-404D-A5C8-A6652CA51F8C_1_201_a](https://user-images.githubusercontent.com/101350351/173254598-274a44a1-d015-4475-9757-de2a8636d5e7.jpeg)
+
+
