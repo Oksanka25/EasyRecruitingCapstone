@@ -1,6 +1,6 @@
 INSERT INTO main_app_client(status, name, position, image, email, phone, resume, linkedin, notes, created_at, user_id)
  VALUES
- ('INITIAL CONTACT', 'Daisy Adair', 'Marketing Coordinator', 'https://static.bangkokpost.com/media/content/20200619/c1_1937552_200619122619.jpg', 'daisy@gmail.com', '912-292-3062', 'https://docs.google.com/document/d/1J1VYv45XWA9j9oEoeHSBLNt0ImlTdosT-WSe5rEwA3s/edit?usp=sharing', 'https://www.linkedin.com/', 'Remote work preferable, PTO and health benefits are highly expected. Flexibility is top of wish list, and it seems they are not prepared to compromise. The client wants to find a purpose in life, and is seeking out employers that share their values.', '2022-06-06 18:57:42.517206-06', 1);
+ ('INITIAL CONTACT', 'Daisy Adair', 'Marketing Coordinator', 'https://static.bangkokpost.com/media/content/20200619/c1_1937552_200619122619.jpg', 'daisy@gmail.com', '912-292-3062', 'https://docs.google.com/document/d/1J1VYv45XWA9j9oEoeHSBLNt0ImlTdosT-WSe5rEwA3s/edit?usp=sharing', 'https://www.linkedin.com/', 'Remote work is preferable, and PTO and health benefits are highly expected. Flexibility is top of the wish list, and it seems they are not prepared to compromise. The client wants to find a purpose in life and is seeking out employers that share their values.', '2022-06-06 18:57:42.517206-06', 1);
 
 INSERT INTO main_app_client(status, name, position, image, email, phone, resume, linkedin, notes, created_at, user_id)
  VALUES
