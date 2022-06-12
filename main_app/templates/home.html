@@ -2,8 +2,13 @@
 {% block title %} Welcome {% endblock %}
 {% block content %}
 {% if user.is_authenticated %}
-<h1>Welcome to EasyRecruiting</h1>
-<h2> All in One Place </h2>
+<div class="about-page-container">
+<h1 class="text-center" >Welcome to EasyRecruiting</h1>
+<h2 class="text-center"> All in One Place </h2>
+<div class="recruiting-image-conatiner p-4">
+    <img class="recruiting-image" src="https://st.depositphotos.com/2065405/4599/i/600/depositphotos_45995891-stock-photo-word-cloud-recruitment.jpg" alt="recruiting">
+  </div>
+</div>
 
 {% else %}
 
