@@ -1,41 +1,6 @@
 {% extends 'base.html' %}
+{% block title %} Add Client {% endblock %}
 {% block content %}
-
-{% comment %} <div class="container">
-  <div class="">
-    <div class="">
-      <div class="content">
-        <h2>Add a Client</h2>
-      </div>
-      <form method="post">
-        {% csrf_token %}
-        {% for non_field_error in form.non_field_errors %}
-        <p class="help is-danger">{{ non_field_error }}</p>
-        {% endfor %}
-        {% for field in form %}
-        <div class="field">
-          <label for="{{ field.id_for_label }}" class="label">{{ field.html_name }}</label>
-          {{ field }}
-          {% for error in field.errors %}
-          <p class="help is-danger">{{ error }}</p>
-          {% endfor %}
-        </div>
-        {% endfor %}
-        <input type="submit" value="Add Client" class="btn">
-      </form>
-    </div>
-  </div>
-</div> {% endcomment %}
-
-{% comment %} <h1 class="pt-3">Add a Client... </h1>
-<br /><br />
-<table>
-  <form action="" method="post">
-    {% csrf_token %}
-    {{form.as_table}}
-</table>
-<input type="submit" value="Add Client" />
-</form> {% endcomment %}
 
 <h1 class="pt-3 pb-4 d-flex justify-content-center">Add a Client... </h1>
 <div class="mb-5 d-flex justify-content-center">

@@ -1,4 +1,6 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %} 
+{% block title %} Delete {% endblock %}
+{% block content %}
 <h1 class="pt-5 text-center">Are you sure you want to Delete {{client.name}}?</h1>
 <form class="pt-5 text-center" method="post">
     {% csrf_token %}
