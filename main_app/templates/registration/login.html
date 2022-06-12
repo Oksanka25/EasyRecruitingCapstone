@@ -6,7 +6,7 @@ Login
 {% block content %}
 <div class="login-container">
     <div class="login-content">
-        <h3 class="">Login</h3>
+        <h3 class="">Log In</h3>
         <form action="{% url 'login' %}" method="post">
             {% csrf_token %}
             {% for non_field_error in form.non_field_errors %}
