@@ -44,9 +44,9 @@ Hosted on Heroku: https://easy-recruiting.herokuapp.com/
 
 
 ## Wireframes
+
 ![ECB581B9-4D69-4817-8C34-A1CC15853E63_1_201_a](https://user-images.githubusercontent.com/101350351/173254424-7049a1cb-f725-4fe7-bba6-a266a1ffe396.jpeg)
-![B96BAB66-4AA5-4D3F-8AAE-35FFF928032E_1_201_a](https://user-images.githubusercontent.com/101350351/173254607-b453b659-f03d-4737-ace9-4fd32905aa42.jpeg)
-![easy_recruiting](https://user-images.githubusercontent.com/101350351/182037118-339199d4-abc5-4fef-8f3c-a5c4d456f28d.png)
+![easy_recruiting](https://user-images.githubusercontent.com/101350351/182037118-339199d4-abc5-4fef-8f3c-a5c4d456f28d.png)![C4E7A633-A9A5-404D-A5C8-A6652CA51F8C_1_201_a](https://user-images.githubusercontent.com/101350351/173254598-274a44a1-d015-4475-9757-de2a8636d5e7.jpeg)
 
 ## Hint
 This log-in data will help you to see the account with the created  clients' profiles:
