@@ -3,6 +3,11 @@
 ## About the Project
 EasyRecruiting is an app that allows recruiters to keep track of their applicants very easily. A user can create profiles of the applicants and add all their information, as well as keep track of the interviews that the applicant had and the results. All in One Place. 
 
+## Hint
+This log-in data will help you to see the account with the created  clients' profiles:
+username: Recruiter
+password: 2022easyrecruiting
+
 ## User Stories
 - As a user, I should be able to create an account.
 - As a user, I should be able to log in.
@@ -48,9 +53,6 @@ Hosted on Heroku: https://easy-recruiting.herokuapp.com/
 ![ECB581B9-4D69-4817-8C34-A1CC15853E63_1_201_a](https://user-images.githubusercontent.com/101350351/173254424-7049a1cb-f725-4fe7-bba6-a266a1ffe396.jpeg)
 ![easy_recruiting](https://user-images.githubusercontent.com/101350351/182037118-339199d4-abc5-4fef-8f3c-a5c4d456f28d.png)![C4E7A633-A9A5-404D-A5C8-A6652CA51F8C_1_201_a](https://user-images.githubusercontent.com/101350351/173254598-274a44a1-d015-4475-9757-de2a8636d5e7.jpeg)
 
-## Hint
-This log-in data will help you to see the account with the created  clients' profiles:
-username: Recruiter
-password: 2022easyrecruiting
+
 
 
